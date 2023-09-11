@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica, "Thomas", "Luc";
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #219ebc;
+}
+
+.container{
+    position: relative;
+    width: 730px;
+    height: 830px;
+    background-color: #219ebc;
+    box-shadow: 25px 25px 75px rgba(0,0,0, 0.7), 10px 10px 70px rgba(0,0,0, 0.7), inset 5px 5px 10px rgba(0,0,0, 0.5), inset 5px 5px 20px rgba(255,255,255, 0.2), inset -5px -5px 15px rgba(0,0,0, 0.75);
+    padding:99px 0px;
+    border-radius: 30px;
+}
+.container h1{
+    position: absolute;
+    top: 0;
+    left: 26%;
+    text-align: center;
+    color: #38b000;
+    font-size: 38px;
+    text-transform: capitalize;
+    background-color: #a8dadc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.container .form{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    margin: 10px 10%;
+    background-color: #eee;
+    top: 10%;
+    position: absolute;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.container .form .input{
+    display: flex;
+    width: 70%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.container .form .add{
+    width: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 19px;
+    margin: 25px;
+    background-color: #bb3a3a;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: bold;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+.container .form .tasks{
+    position: absolute;
+    width: 100%;
+    background-color: #eee;
+    margin: 18% 0;
+    padding: 5px 10px;
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0,0,0, 0.4);
+
+}
+
+.container .form .tasks .task{
+    border-radius: 10px;
+    font-size: 18px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    background-color: #fff;
+}
+.container .form .tasks .task .del{
+    margin: 0px -10px;
+    background-color: red;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 10px;
+    border-radius: 10px;
+    float: right;
+    cursor: pointer;
+}
+.container .form .tasks .task .completed {
+    margin: 0px 12px;
+    background-color: #2bb620;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 5px;
+    border-radius: 10px;
+    float: right;
+    cursor: pointer;
+}
+/* .container .tasks .task:hover{
+    background-color: #ddd;
+    opacity: 0.7;
+} */
+.container .form .tasks .task.done {
+    background-color: #eee;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.delete-all{
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/*mobile screens*/
+
+@media (max-width: 768px){
+    .container h1{
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 10px 15px;
+        padding: 9px 5px;
+        font-size: 30px;
+        position: absolute;
+        left: 50px;
+        top: 10px;
+    }
+    .container .form{
+        display: flex;
+    margin: 0 13px 3px 14px;
+    width: 92%;
+    }
+    .container .form .input{
+        width: 78%;
+        height: 50%;
+    }
+    .container .form .add{
+        font-size: 14px;
+        margin: 25px 1px 5px 5px;
+        line-height: 1;
+        padding: 0 44px;
+        width: 20%;
+        height: 50%;
+    }
+    .container .form .tasks{
+        top: 50px;
+    }
+    .container .form .tasks .task{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container .form .tasks .task .del{
+        width: 24%;
+        font-size: 14px;
+        position: absolute;
+        padding: 5px 3px;
+        text-align: center;
+        right: 20px;
+    }
+    .container .form .tasks .task .completed{
+        position: absolute;
+        right: 100px;
+        width: 23%;
+        font-size: 14px;
+        padding: 3px 2px;
+    }
+    .container .form .tasks .task .del,
+    .container .form .tasks .task .completed{
+        margin-top: 64px;
+    }
+    .delete-all{
+        font-size: 18px;
+    }
+}
